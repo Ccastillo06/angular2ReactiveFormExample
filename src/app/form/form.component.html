@@ -1,0 +1,19 @@
+<form [formGroup]="userForm">
+  <div class="inputControl">
+      <label>Username:</label>
+      <input formControlName="username">
+      <ul *ngIf="userErrors.length" style="color: red;">
+        <li *ngFor="let error of userErrors">{{ error }}</li>
+      </ul>
+  </div>
+  <div class="inputControl">
+    <label>Password:</label>
+    <input formControlName="password">
+    <ul *ngIf="passwordErrors.length" style="color: red;">
+      <li *ngFor="let error of passwordErrors">{{ error }}</li>
+    </ul>
+  </div>
+  <button (click)="onSubmit()">Submit</button>
+</form>
+
+
